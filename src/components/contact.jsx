@@ -51,13 +51,25 @@ export default function Contact() {
             <Typography variant="h2" color="text.primary" gutterBottom>
               Contact Me
             </Typography>
-            <Box sx={{ width: 80, height: 4, bgcolor: "primary.main", mx: "auto", mb: 2 }} />
-            <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-              Feel free to reach out for collaboration, inquiries, or just to say hello. I'll respond as soon as possible!
+            <Box
+              sx={{ width: 80, height: 4, bgcolor: "primary.main", mx: "auto", mb: 2 }}
+            />
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{ maxWidth: 600, mx: "auto" }}
+            >
+              Feel free to reach out for collaboration, inquiries, or just to say
+              hello. I'll respond as soon as possible!
             </Typography>
           </Box>
         </Fade>
-        <Grid container spacing={4} justifyContent="center">
+        <Grid
+          container
+          spacing={4}
+          justifyContent={{ xs: "center", md: "flex-start" }}
+          alignItems="center"
+        >
           <Grid item xs={12} md={8}>
             <Fade in timeout={1200}>
               <Box

@@ -1,7 +1,5 @@
-// import { useState } from "react";
 import {
   Box,
-  Container,
   Grid,
   Typography,
   Fade,
@@ -37,56 +35,77 @@ export default function Education() {
       id="education"
       sx={{
         bgcolor: "background.default",
+        width: "100vw",          // Full viewport width, no horizontal scroll
         py: { xs: 8, md: 16 },
+        overflowX: "hidden",     // prevent horizontal scroll
       }}
     >
-      <Container maxWidth="lg">
-        <Fade in timeout={1000}>
-          <Typography
-            variant="h2"
-            color="text.primary"
-            align="center"
-            gutterBottom
-            sx={{ mb: 8 }}
-          >
+      <Fade in timeout={1000}>
+        <Box textAlign="center" sx={{ mb: 8, maxWidth: 1200, mx: "auto", px: 2 }}>
+          <Typography variant="h2" color="text.primary" gutterBottom>
             Education
           </Typography>
-        </Fade>
-        <Grid container spacing={4}>
-          {educationData.map((edu, index) => (
-            <Grid item xs={12} key={index}>
-              <Fade in timeout={1000 + index * 200}>
-                <Paper
-                  elevation={3}
-                  sx={{
-                    p: 4,
-                    borderRadius: 2,
-                    bgcolor: "background.paper",
-                    transition: "transform 0.3s",
-                    "&:hover": {
-                      transform: "translateY(-4px)",
-                      boxShadow: 6,
-                    },
-                  }}
-                >
-                  <Typography variant="h6" color="primary" gutterBottom>
-                    {edu.degree}
-                  </Typography>
-                  <Typography variant="subtitle1" color="text.primary" gutterBottom>
-                    {edu.institution}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" gutterBottom>
-                    {edu.period}
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    {edu.description}
-                  </Typography>
-                </Paper>
-              </Fade>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+          <Box
+            sx={{ width: 80, height: 4, bgcolor: "primary.main", mx: "auto", mb: 4 }}
+          />
+        </Box>
+      </Fade>
+
+      <Grid
+        container
+        spacing={4}
+        sx={{
+          width: "100vw",
+          maxWidth: "100vw",
+          mx: 0,
+          px: 0,
+        }}
+      >
+        {educationData.map((edu, index) => (
+          <Grid
+            item
+            xs={12}
+            key={index}
+            sx={{
+              width: "100vw",
+              maxWidth: "100vw",
+              px: 2,            // padding inside screen edges
+              mx: 0,
+            }}
+          >
+            <Fade in timeout={1000 + index * 200}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 4,
+                  borderRadius: 2,
+                  bgcolor: "background.paper",
+                  width: "100%",    // full width of Grid item
+                  boxSizing: "border-box",
+                  transition: "transform 0.3s",
+                  "&:hover": {
+                    transform: "translateY(-4px)",
+                    boxShadow: 6,
+                  },
+                }}
+              >
+                <Typography variant="h6" color="primary" gutterBottom>
+                  {edu.degree}
+                </Typography>
+                <Typography variant="subtitle1" color="text.primary" gutterBottom>
+                  {edu.institution}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" gutterBottom>
+                  {edu.period}
+                </Typography>
+                <Typography variant="body1" color="text.secondary">
+                  {edu.description}
+                </Typography>
+              </Paper>
+            </Fade>
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   );
 }

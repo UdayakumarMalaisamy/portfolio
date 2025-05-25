@@ -6,19 +6,15 @@ import {
   ShoppingCart,
   Restaurant,
   Agriculture,
-  GitHub,
-  Launch,
 } from "@mui/icons-material";
 import {
   Box,
   Card,
   CardContent,
-  CardActions,
   Container,
   Grid,
   Typography,
   Chip,
-  Button,
   Fade,
 } from "@mui/material";
 
@@ -62,6 +58,32 @@ export default function Projects() {
       link: "/#",
       github: "/#",
     },
+    {
+      title: "Portfolio Website",
+      description:
+        "A personal portfolio website built with React and Material-UI to showcase projects, skills, and contact information with a modern, responsive design.",
+      tags: ["React", "Material-UI", "JavaScript", "Responsive Design"],
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          width={40}
+          height={40}
+          style={{ color: "#1976d2" }}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6"
+          />
+        </svg>
+      ),
+      link: "/#",
+      github: "/#",
+    },
   ];
 
   return (
@@ -74,10 +96,22 @@ export default function Projects() {
           <Typography variant="h2" color="text.primary" gutterBottom>
             My Projects
           </Typography>
-          <Box sx={{ width: 80, height: 4, bgcolor: "primary.main", mx: "auto", mb: 2 }} />
-          <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-            Here are some of the projects I've worked on. Each project has helped me develop different skills and
-            overcome unique challenges.
+          <Box
+            sx={{
+              width: 80,
+              height: 4,
+              bgcolor: "primary.main",
+              mx: "auto",
+              mb: 2,
+            }}
+          />
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ maxWidth: 600, mx: "auto" }}
+          >
+            Here are some of the projects I've worked on. Each project has helped
+            me develop different skills and overcome unique challenges.
           </Typography>
         </Box>
         <Grid container spacing={4}>
@@ -89,7 +123,8 @@ export default function Projects() {
                   onMouseLeave={() => setHoveredIndex(null)}
                   sx={{
                     transition: "transform 0.3s, boxShadow 0.3s",
-                    transform: hoveredIndex === index ? "scale(1.02)" : "scale(1)",
+                    transform:
+                      hoveredIndex === index ? "scale(1.02)" : "scale(1)",
                     bgcolor: "background.paper",
                   }}
                 >
@@ -102,7 +137,9 @@ export default function Projects() {
                     }}
                   />
                   <CardContent>
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
+                    <Box
+                      sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}
+                    >
                       <Box sx={{ p: 1, bgcolor: "primary.light", borderRadius: "50%" }}>
                         {project.icon}
                       </Box>
@@ -126,26 +163,6 @@ export default function Projects() {
                       ))}
                     </Box>
                   </CardContent>
-                  <CardActions sx={{ justifyContent: "space-between", p: 2, borderTop: 1, borderColor: "divider" }}>
-                    <Button
-                      variant="outlined"
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      startIcon={<GitHub />}
-                    >
-                      Code
-                    </Button>
-                    <Button
-                      variant="contained"
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      startIcon={<Launch />}
-                    >
-                      Live Demo
-                    </Button>
-                  </CardActions>
                 </Card>
               </Fade>
             </Grid>

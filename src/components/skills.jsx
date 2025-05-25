@@ -32,7 +32,7 @@ export default function Skills() {
       { name: "Git/GitHub" },
       { name: "VS Code" },
       { name: "Postman" },
-      { name: "Responsive Design" },
+      
     ],
   };
 

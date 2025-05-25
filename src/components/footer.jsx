@@ -1,4 +1,4 @@
-import { Favorite } from "@mui/icons-material";
+
 import { Box, Container, Typography, Link, Stack } from "@mui/material";
 
 export default function Footer() {
@@ -26,15 +26,13 @@ export default function Footer() {
           {/* Right Section */}
           <Box textAlign={{ xs: "center", md: "left" }}>
             <Stack direction="row" spacing={2} justifyContent={{ xs: "center", md: "flex-start" }} sx={{ mb: 2 }}>
-              <Link href="/#" color="inherit" underline="hover">
+              <Link href="https://www.linkedin.com/in/udayakumar0809?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" color="inherit" underline="hover">
                 LinkedIn
               </Link>
-              <Link href="/#" color="inherit" underline="hover">
+              <Link href="/#https://github.com/UdayakumarMalaisamy" color="inherit" underline="hover">
                 GitHub
               </Link>
-              <Link href="/#" color="inherit" underline="hover">
-                Instagram
-              </Link>
+             
             </Stack>
             <Typography variant="body2">
               &copy; {currentYear} Udayakumar M. All rights reserved.
@@ -43,9 +41,7 @@ export default function Footer() {
         </Stack>
         {/* Bottom Text */}
         <Box textAlign="center">
-          <Typography variant="body2">
-            Made with <Favorite sx={{ fontSize: 16, color: "red", verticalAlign: "middle" }} /> using React.js and Material-UI
-          </Typography>
+          
         </Box>
       </Container>
     </Box>
